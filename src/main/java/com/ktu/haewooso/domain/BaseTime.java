@@ -1,4 +1,4 @@
-package com.ktu.haewooso.entity.auditing;
+package com.ktu.haewooso.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
