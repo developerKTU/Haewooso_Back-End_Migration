@@ -13,14 +13,14 @@ import java.util.List;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class User extends BaseTime implements Persistable<String> {
+public class Members extends BaseTime implements Persistable<String> {
 
     @Id
     private String uuid;
     private String push_token;
     private int send_count;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "members", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<SendMessage> sendMessage = new ArrayList<>();
 
     @Override
@@ -33,7 +33,7 @@ public class User extends BaseTime implements Persistable<String> {
         return getCreatedDate() == null;
     }
 
-    public User(String uuid, String push_token, int send_count){
+    public Members(String uuid, String push_token, int send_count){
         this.uuid = uuid;
         this.push_token = push_token;
         this.send_count = send_count;

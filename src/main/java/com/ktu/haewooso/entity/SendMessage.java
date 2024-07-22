@@ -20,7 +20,7 @@ public class SendMessage {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="uuid")
-    User user;
+    Members members;
 
     @OneToMany(mappedBy = "sendMessage",cascade = CascadeType.ALL, orphanRemoval = true)
     List<SendMessageReply> sendMessageReply;

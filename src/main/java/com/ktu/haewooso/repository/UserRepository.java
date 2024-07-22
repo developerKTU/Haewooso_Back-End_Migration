@@ -1,12 +1,12 @@
 package com.ktu.haewooso.repository;
 
-import com.ktu.haewooso.entity.User;
+import com.ktu.haewooso.entity.Members;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface UserRepository extends JpaRepository<User, String> {
+public interface UserRepository extends JpaRepository<Members, String> {
 
-    List<User> findByUuid(String uuid);
+    List<Members> findByUuid(String uuid);
 
 }
