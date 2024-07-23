@@ -13,6 +13,6 @@ public interface MemberRepository extends JpaRepository<Member, String> {
     List<Member> findByMember();
 
     @Query("select m from Member m where m.uuid = :uuid")
-    List<Member> findByUuid(@Param("uuid") String uuid);
+    Member findByUuid(@Param("uuid") String uuid);
 
 }

@@ -8,7 +8,6 @@ import jakarta.persistence.OneToMany;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.cglib.core.Local;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -19,7 +18,7 @@ import java.util.List;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Member {
 
-    @Id @Column(name = "uuid")
+    @Id
     private String uuid;
     private String pushToken;
     private final int sendCount = 5;
@@ -33,6 +32,10 @@ public class Member {
         this.uuid = uuid;
         this.pushToken = pushToken;
         this.lastConnectDate = lastConnectDate;
+    }
+
+    public void updateLastConnectDate(){
+        this.lastConnectDate = LocalDateTime.now();
     }
 
 }
