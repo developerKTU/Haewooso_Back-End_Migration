@@ -1,7 +1,7 @@
 package com.ktu.haewooso.impl;
 
 import com.ktu.haewooso.domain.Member;
-import com.ktu.haewooso.dto.MemberDto;
+import com.ktu.haewooso.dto.MemberCreateDto;
 import com.ktu.haewooso.repository.MemberRepository;
 import com.ktu.haewooso.service.MemberService;
 import jakarta.persistence.EntityManager;
@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 
 @Service
@@ -26,11 +28,9 @@ public class MemberServiceImpl implements MemberService {
     EntityManager em;
 
     @Override
-    public ResponseEntity<String> memberRegister(MemberDto memberDto) {
-        System.out.println("memberDto.getUuid() = " + memberDto.getUuid());
-        System.out.println("memberDto.getPush_token() = " + memberDto.getPush_token());
-        System.out.println("memberDto.getLast_connect_date() = " + memberDto.getLast_connect_date());
-        Member member1 = new Member(memberDto.getUuid(), memberDto.getPush_token(), memberDto.getLast_connect_date());
+    public ResponseEntity<String> memberRegister(MemberCreateDto memberCreateDto) {
+        validateDuplicateMember(memberCreateDto);
+        Member member1 = new Member(memberCreateDto.getUuid(), memberCreateDto.getPush_token(), memberCreateDto.getLast_connect_date());
 
         try{
             memberRepository.save(member1);
@@ -40,6 +40,14 @@ public class MemberServiceImpl implements MemberService {
         }catch(Exception e){
             e.printStackTrace();
             return new ResponseEntity<String>("400", HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    private void validateDuplicateMember(MemberCreateDto memberCreateDto){
+        List<Member> members = memberRepository.findByUuid(memberCreateDto.getUuid());
+        
+        if(!members.isEmpty()){
+            throw new IllegalStateException("이미 존재하는 회원입니다.");
         }
     }
 }
