@@ -1,6 +1,7 @@
 package com.ktu.haewooso.controller;
 
 import com.ktu.haewooso.dto.MemberCreateDto;
+import com.ktu.haewooso.dto.MemberUpdateDto;
 import com.ktu.haewooso.service.MemberService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -27,4 +28,11 @@ public class MemberController {
     public String memberRegister(@RequestBody @Valid MemberCreateDto memberCreateDto){
         return memberService.memberRegister(memberCreateDto).getBody();
     }
+
+    @Operation(summary = "멤버 수정 API", description = "")
+    @PutMapping("api/v1/connectdateupdate/{uuid}")
+    public String lastConnectDateUpdate(@PathVariable("uuid") String uuid){
+        return memberService.lastConnectDateUpdate(uuid).getBody();
+    }
+
 }

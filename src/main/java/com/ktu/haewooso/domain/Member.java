@@ -8,7 +8,6 @@ import jakarta.persistence.OneToMany;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.cglib.core.Local;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -33,6 +32,10 @@ public class Member {
         this.uuid = uuid;
         this.pushToken = pushToken;
         this.lastConnectDate = lastConnectDate;
+    }
+
+    public void updateLastConnectDate(){
+        this.lastConnectDate = LocalDateTime.now();
     }
 
 }
