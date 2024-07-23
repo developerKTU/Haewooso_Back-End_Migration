@@ -1,4 +1,4 @@
-package com.ktu.haewooso.dto;
+package com.ktu.haewooso.dto.member;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;

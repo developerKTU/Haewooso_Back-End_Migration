@@ -1,8 +1,7 @@
 package com.ktu.haewooso.impl;
 
 import com.ktu.haewooso.domain.Member;
-import com.ktu.haewooso.dto.MemberCreateDto;
-import com.ktu.haewooso.dto.MemberUpdateDto;
+import com.ktu.haewooso.dto.member.MemberCreateDto;
 import com.ktu.haewooso.repository.MemberRepository;
 import com.ktu.haewooso.service.MemberService;
 import jakarta.persistence.EntityManager;
@@ -12,9 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
-import java.util.List;
 
 
 @Service

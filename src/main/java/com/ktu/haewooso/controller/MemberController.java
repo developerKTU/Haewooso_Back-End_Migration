@@ -1,7 +1,6 @@
 package com.ktu.haewooso.controller;
 
-import com.ktu.haewooso.dto.MemberCreateDto;
-import com.ktu.haewooso.dto.MemberUpdateDto;
+import com.ktu.haewooso.dto.member.MemberCreateDto;
 import com.ktu.haewooso.service.MemberService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
