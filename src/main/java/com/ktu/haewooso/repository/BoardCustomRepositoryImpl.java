@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public class BoardCustomRepositoryImpl implements BoardCustomRepository {
 
-     SqlSessionTemplate mybatis;
+    private final SqlSessionTemplate mybatis;
 
     @Autowired
     public BoardCustomRepositoryImpl(SqlSessionTemplate mybatis){
@@ -20,6 +20,12 @@ public class BoardCustomRepositoryImpl implements BoardCustomRepository {
 
     @Override
     public List<MessageBoardDto> getMainBoardList() {
-        return mybatis.selectList("getMainBoardList");
+        List<MessageBoardDto> messageBoardDtos = mybatis.selectList("BoardCustomRepository.getMainBoardList");
+
+        for (MessageBoardDto messageBoardDto : messageBoardDtos) {
+            System.out.println("messageBoardDto.toString() = " + messageBoardDto.toString());
+        }
+
+        return messageBoardDtos;
     }
 }

@@ -20,4 +20,22 @@ public class MessageBoardDto {
     private String replier;
     private String replyContents;
     private LocalDateTime replyRegistDate;
+
+    @Override
+    public String toString() {
+        return "MessageBoardDto{" +
+                "sendBoardSno=" + sendBoardSno +
+                ", sendUuid='" + sendUuid + '\'' +
+                ", receiveUuid='" + receiveUuid + '\'' +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", sendBoardReplyCount=" + sendBoardReplyCount +
+                ", replyCompleteYn=" + replyCompleteYn +
+                ", sendDate=" + sendDate +
+                ", replyViewYn=" + replyViewYn +
+                ", replier='" + replier + '\'' +
+                ", replyContents='" + replyContents + '\'' +
+                ", replyRegistDate=" + replyRegistDate +
+                '}';
+    }
 }
