@@ -23,7 +23,7 @@ public class MessagePushController {
     }
 
     @Operation(summary = "랜덤유저에게 메시지 PUSH하는 API", description = "")
-    @PostMapping("/v1")
+    @PostMapping("api/v1")
     public String pushMessageByRandomUser(@RequestBody MessagePushDto messagePushDto){
 
         // 랜덤토큰 조회
