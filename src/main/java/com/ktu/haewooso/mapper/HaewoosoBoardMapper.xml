@@ -1,0 +1,27 @@
+<!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="HaewoosoBoardMapper">
+    <select id="getMainBoardList" parameterType="com.ktu.haewooso.dto.board.MessageBoardDto">
+        SELECT a.send_board_sno
+             , a.send_uuid
+             , a.title
+             , a.description
+             , a.receive_uuid
+             , a.send_board_reply_count
+             , a.reply_complete_yn
+             , a.reply_view_yn
+             , a.send_date
+             , b.replier
+             , b.reply_contents
+             , b.reply_regist_date
+        FROM send_msg a
+                 LEFT OUTER JOIN send_msg_reply b
+                                 ON a.send_board_sno = b.send_board_sno
+                                     AND a.reply_view_yn = 'Y'
+        WHERE 1=1
+            /* 메인 보여짐 여부 */
+          AND a.main_view_yn = 'Y'
+        /* 답변 메인 공개 여부 -> 메인 보여짐 여부가 Y면 다 보여져야함. */
+        --AND reply_view_yn = 'Y'
+        ORDER BY a.send_board_sno
+    </select>
+</mapper>

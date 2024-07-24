@@ -14,3 +14,6 @@ spring:
 
 logging.level:
   org.hibernate.SQL: debug
+
+mybatis:
+  mapper-locations: classpath:com/ktu/haewooso/mapper/**/**.xml
