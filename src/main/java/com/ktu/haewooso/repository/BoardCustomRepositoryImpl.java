@@ -20,12 +20,7 @@ public class BoardCustomRepositoryImpl implements BoardCustomRepository {
 
     @Override
     public List<MessageBoardDto> getMainBoardList() {
-        List<MessageBoardDto> messageBoardDtos = mybatis.selectList("BoardCustomRepository.getMainBoardList");
 
-        for (MessageBoardDto messageBoardDto : messageBoardDtos) {
-            System.out.println("messageBoardDto.toString() = " + messageBoardDto.toString());
-        }
-
-        return messageBoardDtos;
+        return mybatis.selectList("BoardCustomRepository.getMainBoardList");
     }
 }
