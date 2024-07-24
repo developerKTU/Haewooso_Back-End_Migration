@@ -22,7 +22,9 @@ public class MessagePushController {
         this.FCMNotificationService = FCMNotificationService;
     }
 
-    @Operation(summary = "랜덤유저에게 메시지 PUSH하는 API", description = "랜덤 토큰 값을 조회하여 랜덤 사용자에게 푸시알림을 보내는 API")
+    @Operation(summary = "랜덤유저에게 메시지 PUSH하는 API", description = "**랜덤 토큰 값을 조회하여 랜덤 사용자에게 푸시알림을 보내는 API**" +
+            "\n\n**_<<필요 파라미터>>_**" +
+            "\n\n _sendUuid_\n\n_title_\n\n_description_\n\n_replyViewYn_\n\n_mainViewYn_\n\n_replyPossibleYn_")
     @PostMapping("api/v1")
     public String pushMessageByRandomUser(@RequestBody MessagePushDto messagePushDto){
 
