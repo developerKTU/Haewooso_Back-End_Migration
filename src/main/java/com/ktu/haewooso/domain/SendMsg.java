@@ -33,7 +33,7 @@ public class SendMsg {
     private char replyPossibleYn;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "uuid", referencedColumnName = "uuid", insertable = false, updatable = false)
+    @JoinColumn(name = "sendUuid", referencedColumnName = "uuid", insertable = false, updatable = false)
     Member member;
 
     @JsonIgnore
