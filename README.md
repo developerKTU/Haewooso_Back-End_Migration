@@ -12,6 +12,6 @@
 ### 📌 READ ME
 💡 누군가 나의 고민을 들어주면 어떨까? 해우소 사용자 랜덤으로 자신의 고민을 푸시알람으로 보내어 지친 마음들을 비울 수 있는 앱
 
-💡 Mybatis -> JPA Migration
+💡 Mybatis -> Spring Data JPA Migration -> Add Pure JPA Hibernate
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=BDBDC8&height=150&section=footer" />
