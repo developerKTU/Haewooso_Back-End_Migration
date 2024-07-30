@@ -31,6 +31,7 @@ public class FCMNotificationServiceImpl implements FCMNotificationService {
         this.em = em;
     }
 
+    /* 랜덤 푸시토큰 조회 */
     @Override
     public String getRandomReceiverToken(String uuid) {
         try{
@@ -42,6 +43,7 @@ public class FCMNotificationServiceImpl implements FCMNotificationService {
         }
     }
 
+    /* 랜덤으로 조회한 푸시토큰을 가지고 있는 UUID 조회 */
     @Override
     public String getRandomReceiverUuid(String pushToken) {
         try{
