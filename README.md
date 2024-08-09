@@ -15,4 +15,15 @@
 
 💡 Mybatis -> Spring Data JPA Migration -> Add Pure JPA Hibernate
 
+💡 2024.08 ~ CI/CD 환경 적용을 위해 젠킨스 학습중
+
+💡 주요기능은 구현했지만, 기능 고도화를 위해 배포는 아직 하지않음.
+
+### 📌 HAEWOOSO
+![haewooso1](https://github.com/user-attachments/assets/8e132417-18a8-49f1-974f-1dd968266ab5)
+![haewooso2](https://github.com/user-attachments/assets/96ff014f-5eec-4c10-8ed1-4d8935053fdb)
+<br>
+<br>
+![haewooso3](https://github.com/user-attachments/assets/31540d88-a70f-44bf-bb3d-5c8c179a8d58)
+
 <img src="https://capsule-render.vercel.app/api?type=waving&color=BDBDC8&height=150&section=footer" />
