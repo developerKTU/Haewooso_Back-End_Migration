@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @Tag(name="Haewooso Member API", description = "해우소 앱의 맴버 관련 API 요청을 처리하는 Controller")
-@RestController()
+@RestController
 @RequestMapping("member/")
 public class MemberController {
 
