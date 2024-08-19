@@ -32,8 +32,6 @@ public class MemberServiceImpl implements MemberService {
         try{
             Member member1 = new Member(memberCreateDto.getUuid(), memberCreateDto.getPush_token(), memberCreateDto.getLast_connect_date());
             memberRepository.save(member1);
-            em.flush();
-            em.clear();
             return new ResponseEntity<String>("200", HttpStatus.OK);
         }catch(Exception e){
             e.printStackTrace();

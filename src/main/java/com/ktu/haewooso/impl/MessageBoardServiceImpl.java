@@ -41,8 +41,6 @@ public class MessageBoardServiceImpl implements MessageBoardService {
                     .replyRegistDate(LocalDateTime.now())
                     .build();
             replyRepository.save(sendMsgReply);
-            em.flush();
-            em.clear();
             return new ResponseEntity<String>("200", HttpStatus.OK);
         }catch (Exception e){
             e.printStackTrace();

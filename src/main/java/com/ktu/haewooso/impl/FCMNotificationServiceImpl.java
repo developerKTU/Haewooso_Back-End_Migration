@@ -94,8 +94,6 @@ public class FCMNotificationServiceImpl implements FCMNotificationService {
                     .replyPossibleYn(messagePushDto.getReplyPossibleYn())
                     .build();
             messagePushRepository.save(sendMsg);
-            em.flush();
-            em.clear();
             System.out.println("sendMsg = " + sendMsg.toString());
             return new ResponseEntity<String>("200", HttpStatus.OK);
         }catch(Exception e){
