@@ -23,12 +23,10 @@ public class FCMNotificationServiceImpl implements FCMNotificationService {
 
     private final MessagePushRepository messagePushRepository;
     private final FirebaseMessaging firebaseMessaging;
-    private final EntityManager em;
     @Autowired
-    public FCMNotificationServiceImpl(MessagePushRepository messagePushRepository, FirebaseMessaging firebaseMessaging, EntityManager em){
+    public FCMNotificationServiceImpl(MessagePushRepository messagePushRepository, FirebaseMessaging firebaseMessaging){
         this.messagePushRepository = messagePushRepository;
         this.firebaseMessaging = firebaseMessaging;
-        this.em = em;
     }
 
     /* 랜덤 푸시토큰 조회 */

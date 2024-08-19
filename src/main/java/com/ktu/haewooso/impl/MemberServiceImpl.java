@@ -22,8 +22,6 @@ public class MemberServiceImpl implements MemberService {
     public MemberServiceImpl(MemberRepository memberRepository){
         this.memberRepository = memberRepository;
     }
-    @PersistenceContext
-    EntityManager em;
 
     @Override
     public ResponseEntity<String> memberRegister(MemberCreateDto memberCreateDto) {

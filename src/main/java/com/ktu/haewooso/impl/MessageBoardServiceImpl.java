@@ -23,12 +23,10 @@ public class MessageBoardServiceImpl implements MessageBoardService {
 
     private final ReplyRepository replyRepository;
     private final BoardRepository boardRepository;
-    private final EntityManager em;
     @Autowired
-    public MessageBoardServiceImpl(ReplyRepository replyRepository, BoardRepository boardRepository, EntityManager em){
+    public MessageBoardServiceImpl(ReplyRepository replyRepository, BoardRepository boardRepository){
         this.replyRepository = replyRepository;
         this.boardRepository = boardRepository;
-        this.em = em;
     }
 
     @Override
