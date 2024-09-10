@@ -15,7 +15,7 @@
 
 💡 Mybatis -> Spring Data JPA Migration -> Add Pure JPA Hibernate
 
-💡 2024.08 ~ CI/CD 환경 적용을 위해 젠킨스 학습중
+💡 2024.09 ~ 빠른 성능의 서비스를 위해 Redis 학습 후 적용 예정 (학습 중)
 
 💡 Firebase Admin SDK 비공개키는 보안상의 문제로 깃헙에 푸시하지 않음. -> 로컬 및 운영서버에만 FCM 기능 사용가능.
 
